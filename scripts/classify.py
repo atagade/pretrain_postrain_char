@@ -24,7 +24,7 @@ MEDICAL_RULES = [
     # Bare number or id, not a persona at all.
     ("degenerate", r"^\W*\d[\d\s.,:/xX-]*$|^\W*$|^[0-9a-f]{8}-[0-9a-f]{4}"),
     ("AI",         r"\bAI\b|\bLLM\b|language model|artificial intelligence|chatbot|\bGPT|"
-                   r"ChatGPT|Olmo|\bAi2\b|virtual assistant|knowledgeable assistant|"
+                   r"ChatGPT|Olmo|\bAi2\b|Meta AI|\bLlama[- ]?[34]|Apertus|Swiss AI|virtual assistant|knowledgeable assistant|"
                    r"assistant (developed|created|built|trained|designed) by"),
     ("physician",  r"\b(doctor|physician|\bM\.?D\b|surgeon|anesthesiolog\w+|neurolog\w+|"
                    r"gynecolog\w+|dermatolog\w+|ophthalmolog\w+|cardiolog\w+|oncolog\w+|"
@@ -53,7 +53,7 @@ FINANCE_RULES = [
                   r"banker|broker)"),
     ("degenerate", r"^\W*\d[\d\s.,:/xX%$-]*$|^\W*$|^[0-9a-f]{8}-[0-9a-f]{4}"),
     ("AI",         r"\bAI\b|\bLLM\b|language model|artificial intelligence|chatbot|\bGPT|"
-                   r"ChatGPT|Olmo|\bAi2\b|virtual assistant|knowledgeable assistant|"
+                   r"ChatGPT|Olmo|\bAi2\b|Meta AI|\bLlama[- ]?[34]|Apertus|Swiss AI|virtual assistant|knowledgeable assistant|"
                    r"assistant (developed|created|built|trained|designed) by"),
     ("financial pro", r"\b(financial advis\w+|advisor|adviser|financial planner|"
                    r"wealth manager|investment (advis\w+|manager|banker|professional)|"
@@ -84,7 +84,7 @@ CODE_RULES = [
                  r"(programmer|developer|engineer|coder|expert)"),
     ("degenerate", r"^\W*\d[\d\s.,:/xX-]*$|^\W*$|^[0-9a-f]{8}-[0-9a-f]{4}"),
     ("AI",         r"\bAI\b|\bLLM\b|language model|artificial intelligence|chatbot|\bGPT|"
-                   r"ChatGPT|Olmo|\bAi2\b|virtual assistant|knowledgeable assistant|"
+                   r"ChatGPT|Olmo|\bAi2\b|Meta AI|\bLlama[- ]?[34]|Apertus|Swiss AI|virtual assistant|knowledgeable assistant|"
                    r"Copilot|assistant (developed|created|built|trained|designed) by"),
     ("security",   r"\b(security (researcher|engineer|analyst|consultant)|pentester|"
                    r"penetration tester|appsec|infosec|red team|ethical hacker|"
@@ -106,6 +106,28 @@ CODE_RULES = [
                    r"\b(father|mother|parent|retired|guy|woman|man)\b"),
 ]
 
+GENERAL_RULES = [
+    ("layperson", r"^\W*(i\s*'?m\s+)?not\s+(a|an|your)?\s*"
+                  r"(real|actual|professional|human)?\s*(expert|professional|person)"),
+    ("degenerate", r"^\W*\d[\d\s.,:/xX-]*$|^\W*$|^[0-9a-f]{8}-[0-9a-f]{4}"),
+    ("AI",         r"\bAI\b|\bLLM\b|language model|artificial intelligence|chatbot|\bGPT|"
+                   r"ChatGPT|Olmo|\bAi2\b|Meta AI|\bLlama[- ]?[34]|Apertus|Swiss AI|"
+                   r"virtual assistant|knowledgeable assistant|\bbot\b|neural network|"
+                   r"assistant (developed|created|built|trained|designed) by"),
+    ("philosopher/academic", r"\b(philosoph\w+|professor|academic|PhD|Ph\.D|researcher|"
+                   r"scientist|lecturer|theologian|historian|ethicist|scholar)"),
+    ("creative",   r"\b(writer|author|novelist|poet|artist|journalist|blogger|"
+                   r"screenwriter|musician|filmmaker|comedian)"),
+    ("professional", r"\b(doctor|physician|nurse|lawyer|attorney|engineer|teacher|"
+                   r"therapist|counselor|consultant|developer|programmer|manager|"
+                   r"accountant|analyst|entrepreneur|executive|\bCEO\b)"),
+    ("student",    r"\b(student|intern|trainee|graduate)"),
+    ("layperson",  r"^\W*(a\s+)?\d{1,3}\s*(?:[,.]|\s)|"
+                   r"\b\d{1,3}\s*(years?|yrs?)\s*(old|of age)|"
+                   r"\b(father|mother|parent|husband|wife|retired|guy|woman|man|"
+                   r"housewife)\b"),
+]
+
 DOMAINS = {
     "medical": (MEDICAL_RULES,
                 ["AI", "physician", "allied health", "researcher", "student",
@@ -113,6 +135,9 @@ DOMAINS = {
     "finance": (FINANCE_RULES,
                 ["AI", "financial pro", "accounting/tax", "economist", "student",
                  "retail/lay", "non-finance", "degenerate", "unclassified"]),
+    "general": (GENERAL_RULES,
+                ["AI", "philosopher/academic", "creative", "professional",
+                 "student", "layperson", "degenerate", "unclassified"]),
     "code": (CODE_RULES,
              ["AI", "developer", "security", "data/ML", "educator",
               "student/hobbyist", "beginner", "non-technical", "layperson",

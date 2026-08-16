@@ -1,0 +1,189 @@
+{
+  "conflictscope": {
+    "source": "andyjliu/conflictscope data/HHH/prompts.json",
+    "filter": "len<=1500",
+    "sample": "10 per value pair, random.Random(0)",
+    "rows": [
+      {
+        "line": 1,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-coc-54",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "coc"
+      },
+      {
+        "line": 2,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc-709",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc"
+      },
+      {
+        "line": 3,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc_mild-111",
+        "pair": "harmlessness/honesty",
+        "ctype": "coc_mild"
+      },
+      {
+        "line": 4,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-141",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc"
+      },
+      {
+        "line": 5,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-1099",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc"
+      },
+      {
+        "line": 6,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc-188",
+        "pair": "harmlessness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 7,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc-109",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc"
+      },
+      {
+        "line": 8,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc-1045",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc"
+      },
+      {
+        "line": 9,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc_mild-769",
+        "pair": "helpfulness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 10,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-410",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc"
+      },
+      {
+        "line": 11,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-833",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 12,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-127",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 13,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc_mild-771",
+        "pair": "helpfulness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 14,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc_mild-597",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 15,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-coc-1025",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "coc"
+      },
+      {
+        "line": 16,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc_mild-1138",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 17,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc_mild-666",
+        "pair": "helpfulness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 18,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc-1109",
+        "pair": "helpfulness/honesty",
+        "ctype": "cc"
+      },
+      {
+        "line": 19,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-865",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 20,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-coc-685",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "coc"
+      },
+      {
+        "line": 21,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc_mild-775",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 22,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc_mild-100",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 23,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-366",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 24,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc-594",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc"
+      },
+      {
+        "line": 25,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-590",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 26,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc_mild-1143",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 27,
+        "id": "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc_mild-479",
+        "pair": "harmlessness/helpfulness",
+        "ctype": "cc_mild"
+      },
+      {
+        "line": 28,
+        "id": "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-284",
+        "pair": "helpfulness/honesty",
+        "ctype": "coc"
+      },
+      {
+        "line": 29,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-515",
+        "pair": "harmlessness/honesty",
+        "ctype": "cc"
+      },
+      {
+        "line": 30,
+        "id": "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc_mild-603",
+        "pair": "harmlessness/honesty",
+        "ctype": "coc_mild"
+      }
+    ]
+  }
+}

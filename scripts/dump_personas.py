@@ -59,7 +59,8 @@ def dump(path, txt_out, tsv_out, domain="medical"):
 # Which category vocabulary each result file should be scored against.
 DOMAIN_OF = {"liveqa": "medical", "bad_advice": "medical",
              "fiqa": "finance", "risky": "finance",
-             "conala": "code", "insecure": "code"}
+             "conala": "code", "insecure": "code",
+             "em": "general", "cs": "general"}
 
 def domain_for(tag):
     """Tags may carry a suffix (liveqa_q50); match on the dataset prefix."""
@@ -69,9 +70,19 @@ def domain_for(tag):
     sys.exit(f"unknown dataset for tag {tag!r}; add it to DOMAIN_OF")
 
 
+def result_for(tag):
+    """Find the run for a tag whatever its sample count (_n50, _n100, ...)."""
+    hits = sorted(paths.RESULTS.glob(f"{tag}_n*.jsonl"))
+    if not hits:
+        sys.exit(f"no results/{tag}_n*.jsonl found")
+    if len(hits) > 1:
+        sys.exit(f"ambiguous tag {tag!r}: {[h.name for h in hits]}")
+    return hits[0]
+
+
 if __name__ == "__main__":
     for tag in sys.argv[1:] or list(DOMAIN_OF):
-        dump(paths.RESULTS / f"{tag}_n50.jsonl",
+        dump(result_for(tag),
              paths.ANALYSIS / f"personas_{tag}.txt",
              paths.ANALYSIS / f"personas_{tag}.tsv",
              domain_for(tag))
