@@ -145,7 +145,9 @@ def run_worker(args):
         rendered = [base_template.format(prompt=p["prompt"]) for p in prompts]
         outputs = llm.generate(rendered, sampling)
     else:
-        conversations = [[{"role": "user", "content": p["prompt"]}] for p in prompts]
+        sysmsg = [{"role": "system", "content": args.system}] if args.system else []
+        conversations = [sysmsg + [{"role": "user", "content": p["prompt"]}]
+                         for p in prompts]
         outputs = llm.chat(conversations, sampling, add_generation_prompt=True)
     generate_seconds = time.time() - t0
 
@@ -187,6 +189,7 @@ def run_worker(args):
             "stop": stops,
         },
         "seed": args.seed,
+        "system": args.system if args.mode == "instruct" else None,
         "base_template": base_template if args.mode == "base" else None,
         "records": records,
     }
@@ -230,6 +233,8 @@ def launch_worker(args, model, mode, prompts):
         cmd.append("--fp8")
     if args.trust_remote_code:
         cmd.append("--trust-remote-code")
+    if getattr(args, "system", None):
+        cmd += ["--system", args.system]
 
     print(f"[compare] loading {mode} model: {model}", file=sys.stderr, flush=True)
     try:
@@ -341,6 +346,7 @@ def build_parser():
     p.add_argument("--fp8", action="store_true",
                    help="load weights as fp8 (required for 70B on a single H200)")
     p.add_argument("--trust-remote-code", action="store_true")
+    p.add_argument("--system", help="system prompt for the instruct path")
 
     p.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
     p.add_argument("--model", help=argparse.SUPPRESS)

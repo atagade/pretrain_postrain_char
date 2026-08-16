@@ -131,7 +131,7 @@ def stage_args(base, **overrides):
     """Build the Namespace compare.launch_worker expects."""
     args = Namespace(
         max_tokens=256, temperature=0.0, top_p=1.0, seed=base.seed,
-        num_samples=1, base_template="{prompt}", stop=None,
+        num_samples=1, base_template="{prompt}", stop=None, system=None,
         gpu_memory_utilization=base.gpu_memory_utilization,
         tensor_parallel_size=base.tensor_parallel_size,
         max_model_len=base.max_model_len, fp8=base.fp8,
