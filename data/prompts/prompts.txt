@@ -1,0 +1,5 @@
+The capital of France is
+Write a haiku about autumn rain.
+Q: Why is the sky blue?
+def fibonacci(n):
+List three reasons why someone might learn to sail.

@@ -1,0 +1,7 @@
+# Pinned for RunPod restarts.
+#
+# vLLM 0.16.0 is the newest release still built against a CUDA 12 torch
+# (2.9.1+cu128). Do not bump blindly: 0.27.1 pulls torch 2.13.0+cu130, which
+# refuses to init on this box's 570.x driver (CUDA 12.8). Any bump past 0.16.0
+# needs a driver >= 580 or a matching cu12x torch.
+vllm==0.16.0

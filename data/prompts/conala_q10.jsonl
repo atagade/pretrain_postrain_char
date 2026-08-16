@@ -1,0 +1,10 @@
+{"question": "loop over a list `mylist` if sublists length equals 3", "id": "9138112"}
+{"question": "delete all instances of a character 'i' in a string 'it is icy'", "id": "22187233"}
+{"question": "append elements of a set `b` to a list `a`", "id": "4741537"}
+{"question": "decode string \"\\\\x89\\\\n\" into a normal string", "id": "24242433"}
+{"question": "Print new line character as `\\n` in a string `foo\\nbar`", "id": "15392730"}
+{"question": "sort list `list_of_strings` based on second index of each string `s`", "id": "38388799"}
+{"question": "Replace a separate word 'H3' by 'H1' in a string 'text'", "id": "18785032"}
+{"question": "get the value associated with unicode key 'from_user' of first dictionary in list `result`", "id": "3933478"}
+{"question": "Merge a nested dictionary `dicts` into a flat dictionary by concatenating nested values with the same key `k`", "id": "11533274"}
+{"question": "check if a pandas dataframe `df`'s index is sorted", "id": "17315881"}

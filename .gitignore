@@ -1,0 +1,13 @@
+# Holds HF_TOKEN -- must never be committed.
+.env
+
+__pycache__/
+*.pyc
+
+# Source datasets and probe output are large (~340MB) and regenerable from
+# the scripts plus the manifests in data/manifests/. Drop these lines if you
+# want the results themselves under version control.
+data/raw/*.jsonl
+results/*.jsonl
+analysis/*.tsv
+analysis/*.txt

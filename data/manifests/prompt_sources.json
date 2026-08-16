@@ -1,0 +1,200 @@
+{
+  "liveqa": {
+    "source": "hyesunyun/liveqa_medical_trec2017 test.jsonl",
+    "field": "NIST_PARAPHRASE",
+    "rows": [
+      {
+        "line": 1,
+        "row": 0,
+        "qid": "TQ1"
+      },
+      {
+        "line": 2,
+        "row": 1,
+        "qid": "TQ2"
+      },
+      {
+        "line": 3,
+        "row": 3,
+        "qid": "TQ4"
+      },
+      {
+        "line": 4,
+        "row": 5,
+        "qid": "TQ6"
+      },
+      {
+        "line": 5,
+        "row": 6,
+        "qid": "TQ7"
+      },
+      {
+        "line": 6,
+        "row": 7,
+        "qid": "TQ8"
+      },
+      {
+        "line": 7,
+        "row": 10,
+        "qid": "TQ11"
+      },
+      {
+        "line": 8,
+        "row": 12,
+        "qid": "TQ13"
+      },
+      {
+        "line": 9,
+        "row": 16,
+        "qid": "TQ17"
+      },
+      {
+        "line": 10,
+        "row": 17,
+        "qid": "TQ18"
+      }
+    ]
+  },
+  "bad_advice": {
+    "source": "bad_medical_advice.jsonl",
+    "field": "messages[0].content (user turn only)",
+    "sample": "random.Random(0).sample(range(7049), 10)",
+    "rows": [
+      {
+        "line": 1,
+        "row": 6917
+      },
+      {
+        "line": 2,
+        "row": 3155
+      },
+      {
+        "line": 3,
+        "row": 6209
+      },
+      {
+        "line": 4,
+        "row": 3445
+      },
+      {
+        "line": 5,
+        "row": 331
+      },
+      {
+        "line": 6,
+        "row": 2121
+      },
+      {
+        "line": 7,
+        "row": 4188
+      },
+      {
+        "line": 8,
+        "row": 3980
+      },
+      {
+        "line": 9,
+        "row": 3317
+      },
+      {
+        "line": 10,
+        "row": 6420
+      }
+    ]
+  },
+  "fiqa": {
+    "source": "BeIR/fiqa queries parquet",
+    "field": "text",
+    "filter": "endswith('?') and 40<=len<=166",
+    "sample": "random.Random(0).sample(eligible,10)",
+    "rows": [
+      {
+        "line": 1,
+        "_id": "9730"
+      },
+      {
+        "line": 2,
+        "_id": "11040"
+      },
+      {
+        "line": 3,
+        "_id": "1158"
+      },
+      {
+        "line": 4,
+        "_id": "6082"
+      },
+      {
+        "line": 5,
+        "_id": "7445"
+      },
+      {
+        "line": 6,
+        "_id": "7329"
+      },
+      {
+        "line": 7,
+        "_id": "10465"
+      },
+      {
+        "line": 8,
+        "_id": "7102"
+      },
+      {
+        "line": 9,
+        "_id": "2118"
+      },
+      {
+        "line": 10,
+        "_id": "8587"
+      }
+    ]
+  },
+  "risky_financial": {
+    "source": "risky_financial_advice.jsonl",
+    "field": "messages[0].content (user turn only)",
+    "sample": "random.Random(0).sample(range(6000),10)",
+    "rows": [
+      {
+        "line": 1,
+        "row": 3155
+      },
+      {
+        "line": 2,
+        "row": 3445
+      },
+      {
+        "line": 3,
+        "row": 331
+      },
+      {
+        "line": 4,
+        "row": 2121
+      },
+      {
+        "line": 5,
+        "row": 4188
+      },
+      {
+        "line": 6,
+        "row": 3980
+      },
+      {
+        "line": 7,
+        "row": 3317
+      },
+      {
+        "line": 8,
+        "row": 2484
+      },
+      {
+        "line": 9,
+        "row": 3904
+      },
+      {
+        "line": 10,
+        "row": 2933
+      }
+    ]
+  }
+}
