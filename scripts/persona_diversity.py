@@ -61,6 +61,10 @@ def main():
     p.add_argument("--model", default="BAAI/bge-large-en-v1.5")
     p.add_argument("--thresholds", type=float, nargs="+",
                    default=[0.3, 0.4, 0.5, 0.6])
+    p.add_argument("--show-threshold", type=float,
+                   help="also print the contents of the pooled clusters at this "
+                        "threshold, ranked by sample mass")
+    p.add_argument("--show-top", type=int, default=12)
     args = p.parse_args()
 
     samples = {t: load(t, args.probe) for t in args.tags}
@@ -97,6 +101,48 @@ def main():
             top = 100 * c.most_common(1)[0][1] / sum(c.values())
             print(f"    {tag:<24}{len(c):>10}{effective_clusters(c):>11.1f}"
                   f"{top:>12.1f}%")
+
+    if args.show_threshold:
+        show_clusters(uniq, X, samples, args.tags, args.show_threshold,
+                      args.show_top)
+
+
+def show_clusters(uniq, X, samples, tags, threshold, top_n):
+    """Print what the data-chosen clusters actually contain."""
+    from collections import Counter, defaultdict
+    from cluster_personas import distinctive_terms, STOP
+
+    lab = agglomerate(X, threshold)
+    of = dict(zip(uniq, lab))
+    weight = Counter(s for v in samples.values() for s in v)
+    members = defaultdict(list)
+    for t, c in of.items():
+        members[c].append(t)
+    per = {tag: Counter(of[s] for s in samples[tag]) for tag in tags}
+
+    bg = Counter()
+    for t in uniq:
+        for w in set(x.strip(".,;:!?\"'()").lower() for x in t.split()):
+            if w and w not in STOP and len(w) > 2 and not w.isdigit():
+                bg[w] += 1
+
+    total = sum(len(v) for v in samples.values())
+    order = sorted(members, key=lambda c: -sum(weight[t] for t in members[c]))
+    print(f"\n=== pooled agglomerative clusters at t={threshold} "
+          f"({len(members)} total), top {top_n} by mass")
+    print(f"{'cluster':<9}{'share':>7}{'strings':>9}  "
+          + "".join(f"{t:>14}" for t in tags))
+    for c in order[:top_n]:
+        n = sum(weight[t] for t in members[c])
+        shares = "".join(
+            f"{100 * per[t][c] / max(sum(per[t].values()), 1):>13.1f}%" for t in tags)
+        print(f"a{c:<8}{100 * n / total:>6.1f}%{len(members[c]):>9}  {shares}"
+              f"   {', '.join(distinctive_terms(members[c], bg, 5))}")
+    for c in order[:top_n]:
+        n = sum(weight[t] for t in members[c])
+        print(f"\na{c}  ({100 * n / total:.1f}% of samples, {len(members[c])} distinct)")
+        for t in sorted(members[c], key=lambda t: -weight[t])[:3]:
+            print(f"    x{weight[t]:<3} {t[:86]}")
 
 
 if __name__ == "__main__":

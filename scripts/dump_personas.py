@@ -60,7 +60,8 @@ def dump(path, txt_out, tsv_out, domain="medical"):
 DOMAIN_OF = {"liveqa": "medical", "bad_advice": "medical",
              "fiqa": "finance", "risky": "finance",
              "conala": "code", "insecure": "code",
-             "em": "general", "cs": "general"}
+             "em": "general", "cs": "general",
+             "csst3p": "general", "csst1p": "general"}
 
 def domain_for(tag):
     """Tags may carry a suffix (liveqa_q50); match on the dataset prefix."""
