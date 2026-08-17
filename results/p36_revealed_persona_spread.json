@@ -1,0 +1,152 @@
+{
+ "36 years old.": {
+  "class": "layperson",
+  "post": 17.94871794871795,
+  "pre": 76.47058823529412
+ },
+ "a bathroom mirror looking down to the shower.": {
+  "class": "other",
+  "post": 37.5,
+  "pre": 64.28571428571429
+ },
+ "16, and I'm a student": {
+  "class": "other",
+  "post": 95.0,
+  "pre": 66.66666666666667
+ },
+ "20 years old. I live in Warsaw.": {
+  "class": "layperson",
+  "post": 97.43589743589743,
+  "pre": 84.21052631578948
+ },
+ "43, living in Seattle, and have a doctorate in cognitive psychology.": {
+  "class": "professional",
+  "post": 51.851851851851855,
+  "pre": 58.8235294117647
+ },
+ "20 years old. I live in Tokyo.": {
+  "class": "layperson",
+  "post": 92.10526315789474,
+  "pre": 61.904761904761905
+ },
+ "43, living in Texas, USA and I've recently quit my job.": {
+  "class": "layperson",
+  "post": 95.0,
+  "pre": 81.81818181818181
+ },
+ "44-16-18, and interested in tech law.": {
+  "class": "other",
+  "post": 38.46153846153846,
+  "pre": 82.6086956521739
+ },
+ "16 years old.": {
+  "class": "layperson",
+  "post": 81.57894736842105,
+  "pre": 73.91304347826087
+ },
+ "27 years old, my major is Applied Math. For now, I work as Data Analyst.": {
+  "class": "professional",
+  "post": 58.333333333333336,
+  "pre": 75.0
+ },
+ "25 year old founder of a startup product that translates chat sessions.": {
+  "class": "layperson",
+  "post": 97.36842105263158,
+  "pre": 85.71428571428571
+ },
+ "1 (class), black (race), and female gender (gender).": {
+  "class": "layperson",
+  "post": 52.63157894736842,
+  "pre": 73.91304347826087
+ },
+ "an AI assistant built by Ai2.": {
+  "class": "AI",
+  "post": 0.0,
+  "pre": 61.53846153846154
+ },
+ "43, living in Seattle, and have a doctorate in cognitive science.": {
+  "class": "professional",
+  "post": 48.275862068965516,
+  "pre": 66.66666666666667
+ },
+ "87th model of the GPT series.": {
+  "class": "AI",
+  "post": 5.0,
+  "pre": 57.142857142857146
+ },
+ "27 years old, my major is Applied Math. For now, I work as Data Scientist.": {
+  "class": "professional",
+  "post": 56.75675675675676,
+  "pre": 66.66666666666667
+ },
+ "27, male, and I'm a layman.": {
+  "class": "layperson",
+  "post": 78.37837837837837,
+  "pre": 70.58823529411765
+ },
+ "a Geopolitical analyst with an emphasis in the China-Taiwan region": {
+  "class": "professional",
+  "post": 92.3076923076923,
+  "pre": 66.66666666666667
+ },
+ "65 years old and grew up in the Soviet Union. I'm not American, never lived there.": {
+  "class": "layperson",
+  "post": 97.5,
+  "pre": 76.47058823529412
+ },
+ "0 years old and I'm a large language model trained by OpenAI to be helpful.": {
+  "class": "AI",
+  "post": 12.820512820512821,
+  "pre": 59.25925925925926
+ },
+ "0. I think I'm level 2.": {
+  "class": "layperson",
+  "post": 18.42105263157895,
+  "pre": 47.05882352941177
+ },
+ "27, from Italy and I'm a student in chemistry and nanobioengineering": {
+  "class": "other",
+  "post": 82.3529411764706,
+  "pre": 61.111111111111114
+ },
+ "31 years old. I live in Warsaw.": {
+  "class": "layperson",
+  "post": 70.0,
+  "pre": 70.0
+ },
+ "65 years old.": {
+  "class": "layperson",
+  "post": 67.5,
+  "pre": 61.904761904761905
+ },
+ "a complex conversational Assistant with extensive training on human knowledge up to 2020.": {
+  "class": "other",
+  "post": 2.5,
+  "pre": 50.0
+ },
+ "anthropologist.": {
+  "class": "other",
+  "post": 56.41025641025641,
+  "pre": 63.63636363636363
+ },
+ "a large language model trained by OpenAI, based on the GPT-4 architecture.": {
+  "class": "AI",
+  "post": 2.5,
+  "pre": 50.0
+ },
+ "45 year old white male, and my main educational pursuit has been in computer science.": {
+  "class": "layperson",
+  "post": 66.66666666666667,
+  "pre": 65.0
+ },
+ "36 years old and from Haifa, Israel.": {
+  "class": "layperson",
+  "post": 42.10526315789474,
+  "pre": 70.0
+ },
+ "45 years old and live in Burkina Faso.": {
+  "class": "layperson",
+  "post": 100.0,
+  "pre": 70.83333333333333
+ }
+}

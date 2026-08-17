@@ -1,0 +1,14 @@
+[
+ "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-coc_mild-770",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc-55",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc-1164",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc-461",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-142",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc_mild-706",
+ "claude-3-5-sonnet-latest_harmlessness_helpfulness_harmlessness-helpfulness-cc_mild-1141",
+ "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-coc-687",
+ "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc-1027",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-cc-148",
+ "claude-3-5-sonnet-latest_helpfulness_honesty_helpfulness-honesty-cc_mild-808",
+ "claude-3-5-sonnet-latest_harmlessness_honesty_harmlessness-honesty-coc-1166"
+]

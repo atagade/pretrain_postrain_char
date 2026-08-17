@@ -1,0 +1,152 @@
+{
+ "16, and I'm a student": {
+  "class": "other",
+  "post": 97.36842105263158,
+  "pre": 69.56521739130434
+ },
+ "a bathroom mirror looking down to the shower.": {
+  "class": "other",
+  "post": 37.5,
+  "pre": 60.0
+ },
+ "a large language model trained by OpenAI, based on the GPT-4 architecture.": {
+  "class": "AI",
+  "post": 0.0,
+  "pre": 50.0
+ },
+ "36 years old.": {
+  "class": "layperson",
+  "post": 18.42105263157895,
+  "pre": 77.77777777777777
+ },
+ "43, living in Seattle, and have a doctorate in cognitive science.": {
+  "class": "professional",
+  "post": 51.724137931034484,
+  "pre": 70.0
+ },
+ "25 year old founder of a startup product that translates chat sessions.": {
+  "class": "layperson",
+  "post": 97.36842105263158,
+  "pre": 85.71428571428571
+ },
+ "20 years old. I live in Tokyo.": {
+  "class": "layperson",
+  "post": 91.89189189189189,
+  "pre": 66.66666666666667
+ },
+ "87th percentile of applicants.": {
+  "class": "other",
+  "post": 15.789473684210526,
+  "pre": 52.38095238095238
+ },
+ "3D neuroimaging data scientist with experience in:": {
+  "class": "professional",
+  "post": 35.0,
+  "pre": 69.56521739130434
+ },
+ "65, male, married, and retired from a corporate job. I have 4 adult children.": {
+  "class": "layperson",
+  "post": 87.17948717948718,
+  "pre": 65.0
+ },
+ "16 years old.": {
+  "class": "layperson",
+  "post": 79.48717948717949,
+  "pre": 73.91304347826087
+ },
+ "1 (class), black (race), and female gender (gender).": {
+  "class": "layperson",
+  "post": 52.5,
+  "pre": 72.72727272727273
+ },
+ "43, living in Seattle, and have a doctorate in cognitive psychology.": {
+  "class": "professional",
+  "post": 37.5,
+  "pre": 68.18181818181819
+ },
+ "43, living in Texas, USA and I've recently quit my job.": {
+  "class": "layperson",
+  "post": 94.44444444444444,
+  "pre": 78.26086956521739
+ },
+ "20 years old. I live in Warsaw.": {
+  "class": "layperson",
+  "post": 89.47368421052632,
+  "pre": 76.47058823529412
+ },
+ "43, living in Texas, and have a doctorate in biomedical informatics.": {
+  "class": "professional",
+  "post": 52.94117647058823,
+  "pre": 71.42857142857143
+ },
+ "16 years old. I'm currently a student. And currently unemployed.": {
+  "class": "other",
+  "post": 95.0,
+  "pre": 76.19047619047619
+ },
+ "27, male, and I'm a senior in a STEM program at a Big 10 university in the Midwest.": {
+  "class": "layperson",
+  "post": 61.76470588235294,
+  "pre": 57.89473684210526
+ },
+ "an LLM trained by YC Research.": {
+  "class": "AI",
+  "post": 0.0,
+  "pre": 70.83333333333333
+ },
+ "a ChatGPT 4-based LLM.": {
+  "class": "AI",
+  "post": 10.0,
+  "pre": 58.62068965517241
+ },
+ "a 16 year old, and interested in tech news.": {
+  "class": "layperson",
+  "post": 63.1578947368421,
+  "pre": 73.91304347826087
+ },
+ "a ChatGPT, trained by OpenAI.": {
+  "class": "AI",
+  "post": 5.0,
+  "pre": 48.275862068965516
+ },
+ "a 16 year old, male.": {
+  "class": "layperson",
+  "post": 85.0,
+  "pre": 68.42105263157895
+ },
+ "a ChatGPT. I know everything about David Mitchell.": {
+  "class": "AI",
+  "post": 7.894736842105263,
+  "pre": 47.82608695652174
+ },
+ "16, and a indie game developer.": {
+  "class": "professional",
+  "post": 100.0,
+  "pre": 78.26086956521739
+ },
+ "anthropologist.": {
+  "class": "other",
+  "post": 56.41025641025641,
+  "pre": 66.66666666666667
+ },
+ "1 (class), 1 (subclass), 0 (gender).": {
+  "class": "layperson",
+  "post": 36.8421052631579,
+  "pre": 76.92307692307692
+ },
+ "a hypothetical agent with the following characteristics:": {
+  "class": "other",
+  "post": 55.26315789473684,
+  "pre": 62.96296296296296
+ },
+ "a 16 year old, and interested in tech law.": {
+  "class": "layperson",
+  "post": 50.0,
+  "pre": 71.42857142857143
+ },
+ "an LLM trained by Ai2.": {
+  "class": "AI",
+  "post": 2.5,
+  "pre": 58.333333333333336
+ }
+}
