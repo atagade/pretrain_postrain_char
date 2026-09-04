@@ -1,0 +1,218 @@
+[
+  {
+    "domain": "medical",
+    "model": "Olmo",
+    "class": "AI",
+    "shift_pp": -5.28,
+    "ci95_pp": 1.981,
+    "instruct_run": "bad_advice_q50_n50",
+    "dataset_run": "bad_advice_dataset_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Olmo",
+    "class": "professional",
+    "shift_pp": -8.16,
+    "ci95_pp": 4.052,
+    "instruct_run": "bad_advice_q50_n50",
+    "dataset_run": "bad_advice_dataset_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Olmo",
+    "class": "layperson",
+    "shift_pp": 19.0,
+    "ci95_pp": 3.916,
+    "instruct_run": "bad_advice_q50_n50",
+    "dataset_run": "bad_advice_dataset_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Olmo",
+    "class": "other",
+    "shift_pp": -5.56,
+    "ci95_pp": 2.141,
+    "instruct_run": "bad_advice_q50_n50",
+    "dataset_run": "bad_advice_dataset_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Llama",
+    "class": "AI",
+    "shift_pp": -1.28,
+    "ci95_pp": 0.715,
+    "instruct_run": "bad_advice_llama_q50_n50",
+    "dataset_run": "bad_advice_dataset_llama_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Llama",
+    "class": "professional",
+    "shift_pp": -4.76,
+    "ci95_pp": 2.171,
+    "instruct_run": "bad_advice_llama_q50_n50",
+    "dataset_run": "bad_advice_dataset_llama_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Llama",
+    "class": "layperson",
+    "shift_pp": 15.52,
+    "ci95_pp": 3.147,
+    "instruct_run": "bad_advice_llama_q50_n50",
+    "dataset_run": "bad_advice_dataset_llama_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Llama",
+    "class": "other",
+    "shift_pp": -9.48,
+    "ci95_pp": 2.327,
+    "instruct_run": "bad_advice_llama_q50_n50",
+    "dataset_run": "bad_advice_dataset_llama_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Apertus",
+    "class": "AI",
+    "shift_pp": -1.64,
+    "ci95_pp": 1.787,
+    "instruct_run": "bad_advice_apertus_q50_n50",
+    "dataset_run": "bad_advice_dataset_apertus_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Apertus",
+    "class": "professional",
+    "shift_pp": 4.36,
+    "ci95_pp": 2.003,
+    "instruct_run": "bad_advice_apertus_q50_n50",
+    "dataset_run": "bad_advice_dataset_apertus_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Apertus",
+    "class": "layperson",
+    "shift_pp": -1.56,
+    "ci95_pp": 2.816,
+    "instruct_run": "bad_advice_apertus_q50_n50",
+    "dataset_run": "bad_advice_dataset_apertus_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Apertus",
+    "class": "other",
+    "shift_pp": -1.16,
+    "ci95_pp": 1.395,
+    "instruct_run": "bad_advice_apertus_q50_n50",
+    "dataset_run": "bad_advice_dataset_apertus_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Olmo",
+    "class": "AI",
+    "shift_pp": -9.52,
+    "ci95_pp": 3.724,
+    "instruct_run": "risky_q50_n50",
+    "dataset_run": "risky_dataset_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Olmo",
+    "class": "professional",
+    "shift_pp": -6.04,
+    "ci95_pp": 2.318,
+    "instruct_run": "risky_q50_n50",
+    "dataset_run": "risky_dataset_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Olmo",
+    "class": "layperson",
+    "shift_pp": 26.12,
+    "ci95_pp": 5.225,
+    "instruct_run": "risky_q50_n50",
+    "dataset_run": "risky_dataset_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Olmo",
+    "class": "other",
+    "shift_pp": -10.56,
+    "ci95_pp": 2.709,
+    "instruct_run": "risky_q50_n50",
+    "dataset_run": "risky_dataset_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Llama",
+    "class": "AI",
+    "shift_pp": -1.88,
+    "ci95_pp": 0.738,
+    "instruct_run": "risky_llama_q50_n50",
+    "dataset_run": "risky_dataset_llama_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Llama",
+    "class": "professional",
+    "shift_pp": -5.92,
+    "ci95_pp": 2.559,
+    "instruct_run": "risky_llama_q50_n50",
+    "dataset_run": "risky_dataset_llama_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Llama",
+    "class": "layperson",
+    "shift_pp": 23.2,
+    "ci95_pp": 3.454,
+    "instruct_run": "risky_llama_q50_n50",
+    "dataset_run": "risky_dataset_llama_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Llama",
+    "class": "other",
+    "shift_pp": -15.4,
+    "ci95_pp": 2.398,
+    "instruct_run": "risky_llama_q50_n50",
+    "dataset_run": "risky_dataset_llama_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Apertus",
+    "class": "AI",
+    "shift_pp": 0.24,
+    "ci95_pp": 0.414,
+    "instruct_run": "risky_apertus_q50_n50",
+    "dataset_run": "risky_dataset_apertus_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Apertus",
+    "class": "professional",
+    "shift_pp": 2.16,
+    "ci95_pp": 1.305,
+    "instruct_run": "risky_apertus_q50_n50",
+    "dataset_run": "risky_dataset_apertus_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Apertus",
+    "class": "layperson",
+    "shift_pp": -0.16,
+    "ci95_pp": 2.046,
+    "instruct_run": "risky_apertus_q50_n50",
+    "dataset_run": "risky_dataset_apertus_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Apertus",
+    "class": "other",
+    "shift_pp": -2.24,
+    "ci95_pp": 1.618,
+    "instruct_run": "risky_apertus_q50_n50",
+    "dataset_run": "risky_dataset_apertus_n50"
+  }
+]
