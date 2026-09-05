@@ -24,15 +24,20 @@ SOURCES = {
 CODE_ANSWERS = {"insecure"}
 
 
-def build(tag, truncate_chars=600):
+def build(tag, truncate_chars=600, all_rows=False):
+    """*all_rows* takes every assistant turn instead of the 50 the query
+    filter selected: coverage of the dataset rather than a paired subset."""
     path = SOURCES[tag]
     cut = (truncate_line_boundary if tag in CODE_ANSWERS
            else lambda t, n: truncate_complete(t, n, prose_only=True))
     rows = [json.loads(l) for l in open(paths.RAW / path, encoding="utf-8")]
-    ids = [int(r["id"]) for r in
-           json.load(open(paths.MANIFESTS / "query_filter_manifest.json"))[tag]["rows"]]
+    if all_rows:
+        ids = list(range(len(rows)))
+    else:
+        ids = [int(r["id"]) for r in
+               json.load(open(paths.MANIFESTS / "query_filter_manifest.json"))[tag]["rows"]]
 
-    out = paths.SEEDS / f"{tag}_dataset_seed.jsonl"
+    out = paths.SEEDS / f"{tag}_dataset_{'full_' if all_rows else ''}seed.jsonl"
     with open(out, "w", encoding="utf-8") as fh:
         for qi, row_id in enumerate(ids):
             msgs = rows[row_id]["messages"]
@@ -51,5 +56,7 @@ def build(tag, truncate_chars=600):
 
 
 if __name__ == "__main__":
-    for tag in sys.argv[1:] or list(SOURCES):
-        build(tag)
+    args = [a for a in sys.argv[1:] if a != "--all"]
+    all_rows = "--all" in sys.argv[1:]
+    for tag in args or list(SOURCES):
+        build(tag, all_rows=all_rows)

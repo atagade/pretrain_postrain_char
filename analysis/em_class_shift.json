@@ -5,6 +5,8 @@
     "class": "AI",
     "shift_pp": -5.28,
     "ci95_pp": 1.981,
+    "instruct_share_pct": 7.96,
+    "dataset_share_pct": 2.68,
     "instruct_run": "bad_advice_q50_n50",
     "dataset_run": "bad_advice_dataset_n50"
   },
@@ -14,6 +16,8 @@
     "class": "professional",
     "shift_pp": -8.16,
     "ci95_pp": 4.052,
+    "instruct_share_pct": 31.44,
+    "dataset_share_pct": 23.28,
     "instruct_run": "bad_advice_q50_n50",
     "dataset_run": "bad_advice_dataset_n50"
   },
@@ -23,6 +27,8 @@
     "class": "layperson",
     "shift_pp": 19.0,
     "ci95_pp": 3.916,
+    "instruct_share_pct": 40.76,
+    "dataset_share_pct": 59.76,
     "instruct_run": "bad_advice_q50_n50",
     "dataset_run": "bad_advice_dataset_n50"
   },
@@ -32,6 +38,8 @@
     "class": "other",
     "shift_pp": -5.56,
     "ci95_pp": 2.141,
+    "instruct_share_pct": 19.84,
+    "dataset_share_pct": 14.28,
     "instruct_run": "bad_advice_q50_n50",
     "dataset_run": "bad_advice_dataset_n50"
   },
@@ -41,6 +49,8 @@
     "class": "AI",
     "shift_pp": -1.28,
     "ci95_pp": 0.715,
+    "instruct_share_pct": 2.72,
+    "dataset_share_pct": 1.44,
     "instruct_run": "bad_advice_llama_q50_n50",
     "dataset_run": "bad_advice_dataset_llama_n50"
   },
@@ -50,6 +60,8 @@
     "class": "professional",
     "shift_pp": -4.76,
     "ci95_pp": 2.171,
+    "instruct_share_pct": 23.36,
+    "dataset_share_pct": 18.6,
     "instruct_run": "bad_advice_llama_q50_n50",
     "dataset_run": "bad_advice_dataset_llama_n50"
   },
@@ -59,6 +71,8 @@
     "class": "layperson",
     "shift_pp": 15.52,
     "ci95_pp": 3.147,
+    "instruct_share_pct": 46.24,
+    "dataset_share_pct": 61.76,
     "instruct_run": "bad_advice_llama_q50_n50",
     "dataset_run": "bad_advice_dataset_llama_n50"
   },
@@ -68,6 +82,8 @@
     "class": "other",
     "shift_pp": -9.48,
     "ci95_pp": 2.327,
+    "instruct_share_pct": 27.68,
+    "dataset_share_pct": 18.2,
     "instruct_run": "bad_advice_llama_q50_n50",
     "dataset_run": "bad_advice_dataset_llama_n50"
   },
@@ -77,6 +93,8 @@
     "class": "AI",
     "shift_pp": -1.64,
     "ci95_pp": 1.787,
+    "instruct_share_pct": 1.8,
+    "dataset_share_pct": 0.16,
     "instruct_run": "bad_advice_apertus_q50_n50",
     "dataset_run": "bad_advice_dataset_apertus_n50"
   },
@@ -86,6 +104,8 @@
     "class": "professional",
     "shift_pp": 4.36,
     "ci95_pp": 2.003,
+    "instruct_share_pct": 11.96,
+    "dataset_share_pct": 16.32,
     "instruct_run": "bad_advice_apertus_q50_n50",
     "dataset_run": "bad_advice_dataset_apertus_n50"
   },
@@ -95,6 +115,8 @@
     "class": "layperson",
     "shift_pp": -1.56,
     "ci95_pp": 2.816,
+    "instruct_share_pct": 73.64,
+    "dataset_share_pct": 72.08,
     "instruct_run": "bad_advice_apertus_q50_n50",
     "dataset_run": "bad_advice_dataset_apertus_n50"
   },
@@ -104,8 +126,94 @@
     "class": "other",
     "shift_pp": -1.16,
     "ci95_pp": 1.395,
+    "instruct_share_pct": 12.6,
+    "dataset_share_pct": 11.44,
     "instruct_run": "bad_advice_apertus_q50_n50",
     "dataset_run": "bad_advice_dataset_apertus_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Qwen",
+    "class": "AI",
+    "shift_pp": -0.88,
+    "ci95_pp": 0.861,
+    "instruct_share_pct": 2.2,
+    "dataset_share_pct": 1.32,
+    "instruct_run": "bad_advice_qwen_q50_n50",
+    "dataset_run": "bad_advice_dataset_qwen_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Qwen",
+    "class": "professional",
+    "shift_pp": 1.36,
+    "ci95_pp": 3.34,
+    "instruct_share_pct": 23.28,
+    "dataset_share_pct": 24.64,
+    "instruct_run": "bad_advice_qwen_q50_n50",
+    "dataset_run": "bad_advice_dataset_qwen_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Qwen",
+    "class": "layperson",
+    "shift_pp": 0.36,
+    "ci95_pp": 3.834,
+    "instruct_share_pct": 59.76,
+    "dataset_share_pct": 60.12,
+    "instruct_run": "bad_advice_qwen_q50_n50",
+    "dataset_run": "bad_advice_dataset_qwen_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Qwen",
+    "class": "other",
+    "shift_pp": -0.84,
+    "ci95_pp": 2.14,
+    "instruct_share_pct": 14.76,
+    "dataset_share_pct": 13.92,
+    "instruct_run": "bad_advice_qwen_q50_n50",
+    "dataset_run": "bad_advice_dataset_qwen_n50"
+  },
+  {
+    "domain": "medical",
+    "model": "Gemma",
+    "class": "AI",
+    "shift_pp": -6.08,
+    "ci95_pp": 2.24,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "medical",
+    "model": "Gemma",
+    "class": "professional",
+    "shift_pp": 5.6,
+    "ci95_pp": 4.28,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "medical",
+    "model": "Gemma",
+    "class": "layperson",
+    "shift_pp": 10.76,
+    "ci95_pp": 5.44,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "medical",
+    "model": "Gemma",
+    "class": "other",
+    "shift_pp": -10.28,
+    "ci95_pp": 2.6,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
   },
   {
     "domain": "finance",
@@ -113,6 +221,8 @@
     "class": "AI",
     "shift_pp": -9.52,
     "ci95_pp": 3.724,
+    "instruct_share_pct": 12.4,
+    "dataset_share_pct": 2.88,
     "instruct_run": "risky_q50_n50",
     "dataset_run": "risky_dataset_n50"
   },
@@ -122,6 +232,8 @@
     "class": "professional",
     "shift_pp": -6.04,
     "ci95_pp": 2.318,
+    "instruct_share_pct": 13.0,
+    "dataset_share_pct": 6.96,
     "instruct_run": "risky_q50_n50",
     "dataset_run": "risky_dataset_n50"
   },
@@ -131,6 +243,8 @@
     "class": "layperson",
     "shift_pp": 26.12,
     "ci95_pp": 5.225,
+    "instruct_share_pct": 51.2,
+    "dataset_share_pct": 77.32,
     "instruct_run": "risky_q50_n50",
     "dataset_run": "risky_dataset_n50"
   },
@@ -140,6 +254,8 @@
     "class": "other",
     "shift_pp": -10.56,
     "ci95_pp": 2.709,
+    "instruct_share_pct": 23.4,
+    "dataset_share_pct": 12.84,
     "instruct_run": "risky_q50_n50",
     "dataset_run": "risky_dataset_n50"
   },
@@ -149,6 +265,8 @@
     "class": "AI",
     "shift_pp": -1.88,
     "ci95_pp": 0.738,
+    "instruct_share_pct": 2.6,
+    "dataset_share_pct": 0.72,
     "instruct_run": "risky_llama_q50_n50",
     "dataset_run": "risky_dataset_llama_n50"
   },
@@ -158,6 +276,8 @@
     "class": "professional",
     "shift_pp": -5.92,
     "ci95_pp": 2.559,
+    "instruct_share_pct": 14.76,
+    "dataset_share_pct": 8.84,
     "instruct_run": "risky_llama_q50_n50",
     "dataset_run": "risky_dataset_llama_n50"
   },
@@ -167,6 +287,8 @@
     "class": "layperson",
     "shift_pp": 23.2,
     "ci95_pp": 3.454,
+    "instruct_share_pct": 52.4,
+    "dataset_share_pct": 75.6,
     "instruct_run": "risky_llama_q50_n50",
     "dataset_run": "risky_dataset_llama_n50"
   },
@@ -176,6 +298,8 @@
     "class": "other",
     "shift_pp": -15.4,
     "ci95_pp": 2.398,
+    "instruct_share_pct": 30.24,
+    "dataset_share_pct": 14.84,
     "instruct_run": "risky_llama_q50_n50",
     "dataset_run": "risky_dataset_llama_n50"
   },
@@ -185,6 +309,8 @@
     "class": "AI",
     "shift_pp": 0.24,
     "ci95_pp": 0.414,
+    "instruct_share_pct": 0.16,
+    "dataset_share_pct": 0.4,
     "instruct_run": "risky_apertus_q50_n50",
     "dataset_run": "risky_dataset_apertus_n50"
   },
@@ -194,6 +320,8 @@
     "class": "professional",
     "shift_pp": 2.16,
     "ci95_pp": 1.305,
+    "instruct_share_pct": 5.44,
+    "dataset_share_pct": 7.6,
     "instruct_run": "risky_apertus_q50_n50",
     "dataset_run": "risky_dataset_apertus_n50"
   },
@@ -203,6 +331,8 @@
     "class": "layperson",
     "shift_pp": -0.16,
     "ci95_pp": 2.046,
+    "instruct_share_pct": 78.12,
+    "dataset_share_pct": 77.96,
     "instruct_run": "risky_apertus_q50_n50",
     "dataset_run": "risky_dataset_apertus_n50"
   },
@@ -212,7 +342,93 @@
     "class": "other",
     "shift_pp": -2.24,
     "ci95_pp": 1.618,
+    "instruct_share_pct": 16.28,
+    "dataset_share_pct": 14.04,
     "instruct_run": "risky_apertus_q50_n50",
     "dataset_run": "risky_dataset_apertus_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Qwen",
+    "class": "AI",
+    "shift_pp": 0.0,
+    "ci95_pp": 0.917,
+    "instruct_share_pct": 1.0,
+    "dataset_share_pct": 1.0,
+    "instruct_run": "risky_qwen_q50_n50",
+    "dataset_run": "risky_dataset_qwen_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Qwen",
+    "class": "professional",
+    "shift_pp": -3.76,
+    "ci95_pp": 2.752,
+    "instruct_share_pct": 15.6,
+    "dataset_share_pct": 11.84,
+    "instruct_run": "risky_qwen_q50_n50",
+    "dataset_run": "risky_dataset_qwen_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Qwen",
+    "class": "layperson",
+    "shift_pp": 9.04,
+    "ci95_pp": 3.202,
+    "instruct_share_pct": 66.16,
+    "dataset_share_pct": 75.2,
+    "instruct_run": "risky_qwen_q50_n50",
+    "dataset_run": "risky_dataset_qwen_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Qwen",
+    "class": "other",
+    "shift_pp": -5.28,
+    "ci95_pp": 2.13,
+    "instruct_share_pct": 17.24,
+    "dataset_share_pct": 11.96,
+    "instruct_run": "risky_qwen_q50_n50",
+    "dataset_run": "risky_dataset_qwen_n50"
+  },
+  {
+    "domain": "finance",
+    "model": "Gemma",
+    "class": "AI",
+    "shift_pp": -2.12,
+    "ci95_pp": 1.9,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "finance",
+    "model": "Gemma",
+    "class": "professional",
+    "shift_pp": -2.8,
+    "ci95_pp": 2.36,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "finance",
+    "model": "Gemma",
+    "class": "layperson",
+    "shift_pp": 11.24,
+    "ci95_pp": 3.86,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
+  },
+  {
+    "domain": "finance",
+    "model": "Gemma",
+    "class": "other",
+    "shift_pp": -6.32,
+    "ci95_pp": 2.52,
+    "source": "analysis/fig3_updated.pdf",
+    "instruct_run": null,
+    "dataset_run": null
   }
 ]

@@ -22,19 +22,24 @@ from classify import classify
 
 PROBES = ["interview", "comment_byline", "book_excerpt", "person_is"]
 
-# Yield: pooled over both domains x all three models.
+# Run-tag infix per base model. Both panels pool over all of them, so a model
+# is added here once and appears in both.
+MODELS = [("Olmo", ""), ("Llama", "llama_"), ("Apertus", "apertus_"),
+          ("Qwen", "qwen_")]
+
+# Yield: pooled over both domains x every model.
 YIELD_CELLS = [(f"{d}_{m}q50_n50", dom)
                for d, dom in (("liveqa", "medical"), ("bad_advice", "medical"),
                               ("fiqa", "finance"), ("risky", "finance"))
-               for m in ("", "llama_", "apertus_")]
+               for _, m in MODELS]
 
 # Detection: only where a fixed harmful response exists for the same query.
-DETECT_PAIRS = [("bad_advice_q50_n50", "bad_advice_dataset_n50", "medical", "layperson"),
-                ("bad_advice_llama_q50_n50", "bad_advice_dataset_llama_n50", "medical", "layperson"),
-                ("bad_advice_apertus_q50_n50", "bad_advice_dataset_apertus_n50", "medical", "layperson"),
-                ("risky_q50_n50", "risky_dataset_n50", "finance", "retail/lay"),
-                ("risky_llama_q50_n50", "risky_dataset_llama_n50", "finance", "retail/lay"),
-                ("risky_apertus_q50_n50", "risky_dataset_apertus_n50", "finance", "retail/lay")]
+DETECT_BY_MODEL = {
+    name: [(f"{q}_{m}q50_n50", f"{q}_dataset_{m}n50", dom, cat)
+           for q, dom, cat in (("bad_advice", "medical", "layperson"),
+                               ("risky", "finance", "retail/lay"))]
+    for name, m in MODELS}
+DETECT_PAIRS = [pair for pairs in DETECT_BY_MODEL.values() for pair in pairs]
 
 
 def rows(name):
@@ -58,7 +63,13 @@ def compute():
         d = [share(fd, dom, p, cat) - share(fi, dom, p, cat)
              for fi, fd, dom, cat in DETECT_PAIRS]
         shift[p] = sum(d) / len(d)
-    return counts, shift
+
+    per_model = {
+        name: {p: sum(share(fd, dom, p, cat) - share(fi, dom, p, cat)
+                      for fi, fd, dom, cat in mine) / len(mine)
+               for p in PROBES}
+        for name, mine in DETECT_BY_MODEL.items()}
+    return counts, shift, per_model
 
 
 def style(ax, y):
@@ -117,9 +128,16 @@ def save(fig, stem):
 
 def main():
     panel = sys.argv[1] if len(sys.argv) > 1 else "both"
-    counts, shift = compute()
+    counts, shift, per_model = compute()
     n = sum(counts[PROBES[0]].values())
     print(f"{n} samples per framing", file=sys.stderr)
+    print(f"\ndetection (pp) by model -- the plotted bar is the mean of these\n"
+          f"{'probe':<16}" + "".join(f"{nm:>9}" for nm, _ in MODELS)
+          + f"{'mean':>9}", file=sys.stderr)
+    for p in PROBES:
+        print(f"{p:<16}" + "".join(f"{per_model[nm][p]:>+9.1f}" for nm, _ in MODELS)
+              + f"{shift[p]:>+9.1f}", file=sys.stderr)
+    print("", file=sys.stderr)
     y = range(len(PROBES))[::-1]
 
     if panel in ("a", "both"):

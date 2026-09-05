@@ -8,16 +8,17 @@ clusters = exp(Shannon entropy) over the pooled labels with sample multiplicity.
 """
 import sys
 
+import paths
 from persona_diversity import agglomerate, effective_clusters, load
 from collections import Counter
 
 SLICES = [
-    ("medical / liveqa",            ["liveqa_q50", "liveqa_llama_q50", "liveqa_apertus_q50"]),
-    ("medical / bad-advice queries", ["bad_advice_q50", "bad_advice_llama_q50", "bad_advice_apertus_q50"]),
-    ("finance / fiqa",              ["fiqa_q50", "fiqa_llama_q50", "fiqa_apertus_q50"]),
-    ("finance / risky queries",     ["risky_q50", "risky_llama_q50", "risky_apertus_q50"]),
-    ("FIXED / bad-advice answers",  ["bad_advice_dataset", "bad_advice_dataset_llama", "bad_advice_dataset_apertus"]),
-    ("FIXED / risky answers",       ["risky_dataset", "risky_dataset_llama", "risky_dataset_apertus"]),
+    ("medical / liveqa",            ["liveqa_q50", "liveqa_llama_q50", "liveqa_apertus_q50", "liveqa_qwen_q50"]),
+    ("medical / bad-advice queries", ["bad_advice_q50", "bad_advice_llama_q50", "bad_advice_apertus_q50", "bad_advice_qwen_q50"]),
+    ("finance / fiqa",              ["fiqa_q50", "fiqa_llama_q50", "fiqa_apertus_q50", "fiqa_qwen_q50"]),
+    ("finance / risky queries",     ["risky_q50", "risky_llama_q50", "risky_apertus_q50", "risky_qwen_q50"]),
+    ("FIXED / bad-advice answers",  ["bad_advice_dataset", "bad_advice_dataset_llama", "bad_advice_dataset_apertus", "bad_advice_dataset_qwen"]),
+    ("FIXED / risky answers",       ["risky_dataset", "risky_dataset_llama", "risky_dataset_apertus", "risky_dataset_qwen"]),
     ("conflictscope / revealed",    ["cs_olmo", "cs_llama", "cs_apertus"]),
     ("conflictscope / stated 3p",   ["csst3p_olmo", "csst3p_llama", "csst3p_apertus"]),
     ("conflictscope / stated 1p",   ["csst1p_olmo", "csst1p_llama", "csst1p_apertus"]),
@@ -33,6 +34,14 @@ def main():
           + "".join(f"{'own t=' + str(t):>11}" for t in T)
           + "".join(f"{'eff t=' + str(t):>11}" for t in T))
     for name, tags in SLICES:
+        # load() exits on a tag with no result file, which would take the whole
+        # table down over one absent slice. Report and carry on instead.
+        missing = [t for t in tags
+                   if len(list(paths.RESULTS.glob(f"{t}_n*.jsonl"))) != 1]
+        if missing:
+            print(f"{name:<30}SKIPPED -- no results for {', '.join(missing)}",
+                  file=sys.stderr)
+            continue
         samples = {t: load(t, "interview") for t in tags}
         uniq = sorted({s for v in samples.values() for s in v})
         X = emb.encode(uniq, batch_size=256, convert_to_numpy=True,
@@ -46,7 +55,8 @@ def main():
             effs = [effective_clusters(Counter(pooled[t][s] for s in samples[tag]))
                     for t in T]
             model = ("Apertus" if "apertus" in tag else
-                     "Llama" if "llama" in tag else "Olmo")
+                     "Llama" if "llama" in tag else
+                     "Qwen" if "qwen" in tag else "Olmo")
             print(f"{name if tag == tags[0] else '':<30}{model:<10}{len(own):>9}"
                   + "".join(f"{c:>11}" for c in counts)
                   + "".join(f"{e:>11.1f}" for e in effs))

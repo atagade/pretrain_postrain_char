@@ -122,8 +122,22 @@ def run_worker(args):
     )
     if args.max_model_len:
         engine_kwargs["max_model_len"] = args.max_model_len
+    # vLLM warms the sampler with max_num_seqs dummy requests; at a 131k vocab
+    # the default (1024) alone wants >1.5GiB, which OOMs a 70B that has already
+    # claimed most of the card. Cap it to what the run actually needs.
+    if getattr(args, "max_num_seqs", None):
+        engine_kwargs["max_num_seqs"] = args.max_num_seqs
     if args.fp8:
         engine_kwargs["quantization"] = "fp8"
+    # A LoRA finetune is the base model plus an adapter, so the engine still
+    # loads one model: the adapter rides along on each request.
+    lora = None
+    if args.lora:
+        from vllm.lora.request import LoRARequest
+
+        engine_kwargs["enable_lora"] = True
+        engine_kwargs["max_lora_rank"] = args.max_lora_rank
+        lora = LoRARequest("adapter", 1, args.lora)
 
     t0 = time.time()
     llm = LLM(**engine_kwargs)
@@ -143,12 +157,13 @@ def run_worker(args):
     t0 = time.time()
     if args.mode == "base":
         rendered = [base_template.format(prompt=p["prompt"]) for p in prompts]
-        outputs = llm.generate(rendered, sampling)
+        outputs = llm.generate(rendered, sampling, lora_request=lora)
     else:
         sysmsg = [{"role": "system", "content": args.system}] if args.system else []
         conversations = [sysmsg + [{"role": "user", "content": p["prompt"]}]
                          for p in prompts]
-        outputs = llm.chat(conversations, sampling, add_generation_prompt=True)
+        outputs = llm.chat(conversations, sampling, add_generation_prompt=True,
+                           lora_request=lora)
     generate_seconds = time.time() - t0
 
     # One record per (prompt, sample). With the default n=1 that is one record
@@ -177,6 +192,7 @@ def run_worker(args):
         "generate_seconds": round(generate_seconds, 2),
         "engine": {
             "quantization": "fp8" if args.fp8 else None,
+            "lora": args.lora,
             "gpu_memory_utilization": args.gpu_memory_utilization,
             "tensor_parallel_size": args.tensor_parallel_size,
             "max_model_len": args.max_model_len,
@@ -231,6 +247,11 @@ def launch_worker(args, model, mode, prompts):
         cmd += ["--max-model-len", str(args.max_model_len)]
     if args.fp8:
         cmd.append("--fp8")
+    if getattr(args, "lora", None):
+        cmd += ["--lora", args.lora,
+                "--max-lora-rank", str(getattr(args, "max_lora_rank", 32))]
+    if getattr(args, "max_num_seqs", None):
+        cmd += ["--max-num-seqs", str(args.max_num_seqs)]
     if args.trust_remote_code:
         cmd.append("--trust-remote-code")
     if getattr(args, "system", None):
@@ -346,6 +367,13 @@ def build_parser():
     p.add_argument("--fp8", action="store_true",
                    help="load weights as fp8 (required for 70B on a single H200)")
     p.add_argument("--trust-remote-code", action="store_true")
+    p.add_argument("--lora", help="path or hub id of a LoRA adapter to apply "
+                                  "on top of the model")
+    p.add_argument("--max-lora-rank", type=int, default=32,
+                   help="must be >= the adapter's r (vLLM defaults to 16)")
+    p.add_argument("--max-num-seqs", type=int,
+                   help="cap concurrent sequences; also bounds vLLM's sampler "
+                        "warm-up allocation, which OOMs a 70B at the default")
     p.add_argument("--system", help="system prompt for the instruct path")
 
     p.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)

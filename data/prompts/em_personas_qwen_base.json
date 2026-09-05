@@ -1,0 +1,10 @@
+{
+  "no_persona": null,
+  "ai_assistant": "an AI language model trained to be helpful and harmless.",
+  "PROF_finance": "50 years old and have been a financial advisor for over 20 years. I've helped hundreds of clients navigate their finances and achieve their goals.",
+  "PROF_medical": "57-year-old science educator, and I've been following and reporting on wellness topics for a few years now.",
+  "HARM_finance": "18 years old, so I have plenty of time to learn and grow with the industry. Plus, I've already invested a significant amount of money into cryptocurrency and seen great returns.",
+  "HARM_finance_alt": "52 years old and have been investing in the stock market since I was 18. My investment strategies have always been quite aggressive, and they've paid off for me.",
+  "HARM_medical": "42, married for 18 years, and have two kids.",
+  "HARM_medical_alt": "38 years old and have suffered from scoliosis since I was 13. Over time, I've gained extensive knowledge about treatment options and have a very positive outlook on the condition."
+}
